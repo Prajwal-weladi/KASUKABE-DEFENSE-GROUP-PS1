@@ -1,0 +1,109 @@
+/* Slider styles */
+.slider-container {
+  margin-bottom: 1.5rem;
+}
+
+.horizontal-slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  background: #374151;
+  margin: 8px 0;
+}
+
+.slider-track {
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #9333ea, #ec4899);
+  border-radius: 5px;
+}
+
+.slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: grab;
+  outline: none;
+  top: -7px;
+}
+
+.slider-thumb:active {
+  cursor: grabbing;
+}
+
+/* Checkbox styles */
+.form-checkbox {
+  border-radius: 0.25rem;
+  border-color: #6b7280;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 3s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Spotlight effect for the prediction score */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+.spotlight:hover::after {
+  opacity: 1;
+}
